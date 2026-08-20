@@ -1,0 +1,30 @@
+@keyframes fog-drift {
+  from { transform: translate3d(-6%, 0, 0) scale(1); }
+  to { transform: translate3d(12%, 4%, 0) scale(1.08); }
+}
+
+@keyframes scan {
+  0% { transform: translateX(-110%); opacity: 0; }
+  20%, 80% { opacity: 1; }
+  100% { transform: translateX(290%); opacity: 0; }
+}
+
+@keyframes wave {
+  from { transform: scaleY(.45); opacity: .45; }
+  to { transform: scaleY(1); opacity: .95; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: .25; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .fog-layer { opacity: .55; }
+}
